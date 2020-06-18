@@ -13,9 +13,8 @@
 ActiveRecord::Schema.define(version: 2020_06_18_132458) do
 
   create_table "posts", force: :cascade do |t|
-    t.string "username"
-    t.string "email"
-    t.string "password"
+    t.string "title"
+    t.text "post"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
