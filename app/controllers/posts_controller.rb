@@ -5,14 +5,9 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
- def post_params
-
-params.require(:post).permit(:title, :post )
-
- end
 
   def create
-    @post = Post.new
+    @post = Post.new(post_params)
     @post.save
     flash.notice = "Post '#{@post.title}' Created!"
     redirect_to posts_path
@@ -22,3 +17,10 @@ params.require(:post).permit(:title, :post )
     @posts = Post.all
   end
 end
+
+ private
+ def post_params
+
+params.require(:post).permit(:title, :post )
+
+ end
