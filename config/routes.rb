@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   resources :users
   resources :posts, only: [:new, :create, :index]
+  resources :authors
+  resources :user_sessions, only: %i[new create destroy]
 end
